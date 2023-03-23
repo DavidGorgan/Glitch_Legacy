@@ -1,0 +1,154 @@
+@font-face {
+  font-family: 'hackedregular';
+  src: url('/webfontkit-20230323-131848/hacked-kerx-webfont.woff2') format('woff2'),
+    url('./webfontkit-20230323-131848/hacked-kerx-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: 'hackedregular';
+}
+
+
+/* Loading */
+
+#loading-screen {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  height: 100vh;
+  width: 900px;
+  margin: 0 auto;
+  animation-name: loadingHide;
+  animation-delay: 5.25s;
+  animation-fill-mode: forwards;
+  animation-duration: .75s;
+  opacity: 1;
+}
+
+@keyframes loadingHide {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+#loading-screen .loading-bar {
+  height: 34px;
+  width: 900px;
+  border: 2px #000 solid;
+  margin: 1rem 0;
+}
+
+#loading-screen .loading-bar .loading-bar-progress {
+  height: 100%;
+  background-color: #20B14C;
+  animation: progressBarFill 5s;
+}
+
+#loading-screen .loading-title {
+  font-size: 3rem;
+  user-select: none;
+  display: flex;
+}
+
+#loading-screen .loading-point-1 {
+  animation: loading-point-1 infinite;
+  animation-duration: 5s;
+}
+
+#loading-screen .loading-point-2 {
+  animation: loading-point-2 infinite;
+  animation-duration: 5s;
+}
+
+#loading-screen .loading-point-3 {
+  animation: loading-point-3 infinite;
+  animation-duration: 5s;
+}
+
+@keyframes progressBarFill {
+  0% {
+    width: 0;
+  }
+
+  50% {
+    width: 70%;
+  }
+
+  75% {
+    width: 90%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes loading-point-1 {
+  0% {
+    visibility: visible;
+  }
+
+  20% {
+    visibility: hidden;
+  }
+
+  40% {
+    visibility: visible;
+  }
+
+  60% {
+    visibility: hidden;
+  }
+
+  80% {
+    visibility: visible;
+  }
+
+  100% {
+    visibility: hidden;
+  }
+}
+
+a {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #20b14c69;
+  padding: 1.2rem;
+  border: 1px solid #000;
+  border-radius: 16px;
+  color: #000;
+  text-decoration: none;
+  font-size: 2rem;
+  animation-name: btnShow;
+  animation-delay: 6.5s;
+  opacity: 0;
+  animation-duration: .75s;
+  animation-fill-mode: forwards;
+
+}
+
+@keyframes btnShow {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
