@@ -65,18 +65,28 @@ body {
 }
 
 #loading-screen .loading-point-1 {
-  animation: loading-point-1 infinite;
-  animation-duration: 5s;
+  animation-name: loading-point-1;
+  animation-duration: 6s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  /* margin-right: 4px; */
 }
 
 #loading-screen .loading-point-2 {
-  animation: loading-point-2 infinite;
-  animation-duration: 5s;
+  animation-name: loading-point-2;
+  animation-duration: 6s;
+  animation-fill-mode: forwards;
+  animation-delay: .25s;
+  opacity: 0;
+  /* margin-right: 4px; */
 }
 
 #loading-screen .loading-point-3 {
-  animation: loading-point-3 infinite;
-  animation-duration: 5s;
+  animation-name: loading-point-3;
+  animation-duration: 6s;
+  animation-fill-mode: forwards;
+  animation-delay: .5s;
+  opacity: 0;
 }
 
 @keyframes progressBarFill {
@@ -99,27 +109,139 @@ body {
 
 @keyframes loading-point-1 {
   0% {
-    visibility: visible;
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
   }
 
   20% {
-    visibility: hidden;
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 1;
   }
 
   40% {
-    visibility: visible;
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
   }
 
   60% {
-    visibility: hidden;
+    opacity: 0;
+  }
+
+  70% {
+    opacity: 1;
   }
 
   80% {
-    visibility: visible;
+    opacity: 0;
+  }
+
+  90% {
+    opacity: 1;
   }
 
   100% {
-    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+@keyframes loading-point-2 {
+  0% {
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  20% {
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  40% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  60% {
+    opacity: 0;
+  }
+
+  70% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 0;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes loading-point-3 {
+  0% {
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  20% {
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  40% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  60% {
+    opacity: 0;
+  }
+
+  70% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 0;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
   }
 }
 
@@ -128,27 +250,31 @@ a {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #20b14c69;
   padding: 1.2rem;
   border: 1px solid #000;
-  border-radius: 16px;
   color: #000;
   text-decoration: none;
   font-size: 2rem;
   animation-name: btnShow;
-  animation-delay: 6.5s;
+  animation-delay: 6.25s;
   opacity: 0;
   animation-duration: .75s;
   animation-fill-mode: forwards;
-
+  cursor: default;
+  -webkit-user-drag: none;
+  pointer-events: none
 }
 
 @keyframes btnShow {
   from {
     opacity: 0;
+    cursor: default;
+    pointer-events: none
   }
 
   to {
     opacity: 1;
+    cursor: pointer;
+    pointer-events: all;
   }
 }
