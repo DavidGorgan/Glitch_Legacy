@@ -6,6 +6,15 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'glegacyregular';
+  src: url('/Glitch/glegacy-webfont.woff2') format('woff2'),
+    url('/Glitch/glegacy-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -15,6 +24,9 @@
 html,
 body {
   font-family: 'hackedregular';
+  background-color: #242424;
+  background: url('ezgif.com-video-to-gif.gif') no-repeat;
+  background-size: cover;
 }
 
 
@@ -33,6 +45,7 @@ body {
   animation-fill-mode: forwards;
   animation-duration: .75s;
   opacity: 1;
+  /* background-color: #242424; */
 }
 
 @keyframes loadingHide {
@@ -245,16 +258,14 @@ body {
   }
 }
 
-a {
+.loading-btn {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 1.2rem;
-  border: 1px solid #000;
-  color: #000;
+  color: #000 !important;
   text-decoration: none;
-  font-size: 2rem;
   animation-name: btnShow;
   animation-delay: 6.25s;
   opacity: 0;
@@ -262,8 +273,116 @@ a {
   animation-fill-mode: forwards;
   cursor: default;
   -webkit-user-drag: none;
-  pointer-events: none
+  pointer-events: none;
+  font-family: glegacyregular;
+  font-size: 4rem;
 }
+
+.loading-btn,
+.loading-btn::after {
+  padding: 10px 50px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background-color: transparent;
+}
+
+.loading-btn::after {
+  --move1: inset(50% 50% 50% 50%);
+  --move2: inset(31% 0 40% 0);
+  --move3: inset(39% 0 15% 0);
+  --move4: inset(45% 0 40% 0);
+  --move5: inset(45% 0 6% 0);
+  --move6: inset(14% 0 61% 0);
+  clip-path: var(--move1);
+  content: 'ENTER THE MATRIX';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 500px;
+  display: block;
+  padding: 0;
+}
+
+.loading-btn:hover::after {
+  animation: glitch_4011 1s;
+  animation-iteration-count: 3;
+  text-shadow: 10 10px 10px black;
+  animation-timing-function: steps(2, end);
+  text-shadow: -3px -3px 0px #1df2f0, 3px 3px 0px #E94BE8;
+  background-color: transparent;
+  border: 3px solid rgb(0, 255, 213);
+}
+
+.loading-btn:hover {
+  text-shadow: -1px -1px 0px #1df2f0, 1px 1px 0px #E94BE8;
+  font-family: hackedregular;
+}
+
+.loading-btn:hover {
+  background-color: transparent;
+  border: 1px solid rgb(0, 255, 213);
+  box-shadow: 0px 10px 10px -10px rgb(0, 255, 213);
+}
+
+@keyframes glitch_4011 {
+  0% {
+    clip-path: var(--move1);
+    transform: translate(0px, -10px);
+  }
+
+  10% {
+    clip-path: var(--move2);
+    transform: translate(-10px, 10px);
+  }
+
+  20% {
+    clip-path: var(--move3);
+    transform: translate(10px, 0px);
+  }
+
+  30% {
+    clip-path: var(--move4);
+    transform: translate(-10px, 10px);
+  }
+
+  40% {
+    clip-path: var(--move5);
+    transform: translate(10px, -10px);
+  }
+
+  50% {
+    clip-path: var(--move6);
+    transform: translate(-10px, 10px);
+  }
+
+  60% {
+    clip-path: var(--move1);
+    transform: translate(10px, -10px);
+  }
+
+  70% {
+    clip-path: var(--move3);
+    transform: translate(-10px, 10px);
+  }
+
+  80% {
+    clip-path: var(--move2);
+    transform: translate(10px, -10px);
+  }
+
+  90% {
+    clip-path: var(--move4);
+    transform: translate(-10px, 10px);
+  }
+
+  100% {
+    clip-path: var(--move1);
+    transform: translate(0);
+  }
+}
+
+
 
 @keyframes btnShow {
   from {
